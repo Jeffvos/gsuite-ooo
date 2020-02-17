@@ -22,11 +22,11 @@ def out_reply(name, email):
         'enableAutoReply': True,
         'responseBodyHtml': "<p>Hi, I am no longer working at COMPANY.</p>"
                             "<p>Regards,</p> <p>{}</p>".format(
-                                fullname_leaver),
+                                name),
         'restrictToDomain': False,
     }
 
-    credentials = credentials.create_delegated(user_email)
+    credentials = credentials.create_delegated(email)
     service = build('gmail', 'v1', credentials=credentials)
     result = service.users().settings().updateVacation(
         userId='me', body=out_of_office).execute()
