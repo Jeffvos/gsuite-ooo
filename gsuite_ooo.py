@@ -1,7 +1,7 @@
 """ Begin for automated ooo reply (Gsuite) """
 import sys
 from oauth2client.service_account import ServiceAccountCredentials
-from apiclient.discovery import build
+from googleapiclient.discovery import build
 
 SCOPES = ['https://www.googleapis.com/auth/gmail.settings.basic',
           'https://mail.google.com/']
